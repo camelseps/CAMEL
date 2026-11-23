@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Análisis de Cooperativas SEPS - EVALUACIÓN CONTRAPARTE</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tom-select/2.3.1/css/tom-select.default.min.css">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<div class="container-fluid">
+  <h2>Análisis de Cooperativas SEPS - EVALUACIÓN CONTRAPARTE</h2>
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="well lateral">
+        <label>Cooperativa:</label>
+        <select id="sel-coac"></select>
+        <p id="aviso" class="text-muted" style="margin-top:8px"></p>
+        <div id="resumen"></div>
+        <a id="lnk-excel" class="btn btn-default" style="display:none"><i class="fa fa-download"></i> Descargar Excel</a>
+        <div id="gauge" style="margin-top:12px"></div>
+        <div id="calif-final"></div>
+      </div>
+    </div>
+    <div class="col-sm-8">
+      <ul class="tabs" id="tabs">
+        <li data-tab="radar" class="activa">Radar CAMEL</li>
+        <li data-tab="serie">Serie temporal</li>
+        <li data-tab="capacidad">Capacidad de Pago</li>
+        <li data-tab="graficos">Gráficos financieros</li>
+        <li data-tab="pond">Ponderación Inst.</li>
+        <li data-tab="eda">EDA por Segmento</li>
+      </ul>
+      <div id="tab-radar" class="panel-tab">
+        <div id="p-radar" style="height:700px"></div>
+        <div id="p-historial" style="height:350px"></div>
+      </div>
+      <div id="tab-serie" class="panel-tab" hidden>
+        <div id="pins"></div><div id="resumen-ser"></div><div id="serie-tabla"></div>
+      </div>
+      <div id="tab-capacidad" class="panel-tab" hidden><div id="capacidad"></div></div>
+      <div id="tab-graficos" class="panel-tab" hidden></div>
+      <div id="tab-pond" class="panel-tab" hidden>
+        <div id="pond"></div><hr>
+        <a class="btn btn-default" href="descargas/Ponderacion_COOPAD.xlsx"><i class="fa fa-download"></i> Descargar Excel con todas las COAC</a>
+      </div>
+      <div id="tab-eda" class="panel-tab" hidden>
+        <div class="row">
+          <div class="col-sm-4"><label>Segmento</label><select id="eda-seg" class="form-control"></select></div>
+          <div class="col-sm-5"><label>Indicador</label><select id="eda-ind" class="form-control"></select></div>
+          <div class="col-sm-3"><label>Clusters</label><select id="eda-k" class="form-control"></select></div>
+        </div>
+        <img id="eda-disp" class="img-responsive"><p id="t-disp" class="nota"></p><hr>
+        <img id="eda-pca" class="img-responsive"><p id="t-pca" class="nota"></p><hr>
+        <img id="eda-clu" class="img-responsive"><p id="t-clu" class="nota"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tom-select/2.3.1/js/tom-select.complete.min.js"></script>
+<script src="indice.js" charset="utf-8"></script>
+<script src="eda_txt.js" charset="utf-8"></script>
+<script src="app.js" charset="utf-8"></script>
+</body>
+</html>

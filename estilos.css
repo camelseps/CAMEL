@@ -1,0 +1,14 @@
+.seccion-camel{color:#1F2A44;font-weight:700;font-size:20px;border-bottom:2px solid #1F2A44;padding-bottom:6px;margin:34px 0 14px 0}
+.tabs{list-style:none;margin:0 0 15px;padding:0;display:flex;flex-wrap:wrap;border-bottom:1px solid #ddd}
+.tabs li{padding:10px 16px;cursor:pointer;color:#337ab7}
+.tabs li.activa{color:#555;border:1px solid #ddd;border-bottom-color:#fff;margin-bottom:-1px;border-radius:4px 4px 0 0}
+.nota{background:#F7F7F7;padding:10px;border-radius:6px}
+[hidden]{display:none!important}
+
+body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif}
+.lateral{position:sticky;top:10px;max-height:calc(100vh - 20px);overflow-y:auto}
+@media (min-width:768px){
+  .container-fluid>.row{display:flex}
+  .container-fluid>.row>.col-sm-4{width:33.33%}
+  .container-fluid>.row>.col-sm-8{width:66.66%}
+}
